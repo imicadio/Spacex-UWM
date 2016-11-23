@@ -33,21 +33,25 @@ namespace Spacex.Screens
             tlo = Stale.CONTENT.Load<Texture2D>("Tekstury/tlo");
             floor = Stale.CONTENT.Load<Texture2D>("Tekstury/floor");
             font = Stale.CONTENT.Load<SpriteFont>("Font/Font");
+
+
+            Restart();
+            base.LoadContent();
+        }
+
+        public void Restart()
+        {
             statek = new Obrazki.statek();
             scroll = new Obrazki.scroll();
             kolumny = new List<Obrazki.kolumny>();
             kolumny.Add(new Obrazki.kolumny());
             wynik = 0;
-            Koniec_Gry = false;
-
-
-            base.LoadContent();
         }
 
         public override void Update()
         {
             kolumny_Tworzenie();
-            if (!Koniec_Gry)
+            if (!statek.zniszczony)
             {
                 for (int i = kolumny.Count - 1; i > -1; i--)
                 {
@@ -64,14 +68,19 @@ namespace Spacex.Screens
 
                         if (statek.Granica.Intersects(kolumny[i].Gorna_Granica) || statek.Granica.Intersects(kolumny[i].Dolna_Granica))
                         {
-                            Koniec_Gry = true;
+                            statek.zniszczony = true;
                         }
                     }
                 }
+                statek.Update();
+                scroll.Update();
             }
 
-            statek.Update();
-            scroll.Update();
+            if (statek.zniszczony && Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.R))
+            {
+                this.Restart();
+            }
+
             base.Update();
         }
 

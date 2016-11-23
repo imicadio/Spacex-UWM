@@ -32,9 +32,10 @@ namespace Spacex.Obrazki
         {
             Stale.SPRITEBATCH.Draw(this.tekstura, this.Pozycja, Color.White);
 
-            Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Gorna_Granica, new Color(1f, 0f, 0f, 0.3f));
-
-            Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Dolna_Granica, new Color(1f, 0f, 0f, 0.3f));
+            if (Stale.DEBUG)
+                Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Gorna_Granica, new Color(1f, 0f, 0f, 0.3f));
+            if (Stale.DEBUG)
+                Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Dolna_Granica, new Color(1f, 0f, 0f, 0.3f));
         }
     }
 }
