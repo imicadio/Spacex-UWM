@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Spacex.Obrazki
 {
-    class statek
+    public class statek
     {
         public Texture2D[] Tekstura;
         public int teksturaPozycja;

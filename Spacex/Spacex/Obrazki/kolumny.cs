@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Spacex.Obrazki
 {
-    class kolumny
+    public class kolumny
     {
     }
 }
