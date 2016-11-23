@@ -18,6 +18,7 @@ namespace Spacex
         public static SpriteBatch SPRITEBATCH;
         public static ContentManager CONTENT;
         public static GraphicsDevice GRAPHICSDEVICE;
+        public static Texture2D PIXEL;
 
         public static Menedzer.InputManager INPUT;
     }

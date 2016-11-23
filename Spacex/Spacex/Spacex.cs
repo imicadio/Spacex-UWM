@@ -45,6 +45,7 @@ namespace Spacex
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Stale.SPRITEBATCH = spriteBatch;
+            Stale.PIXEL = Content.Load<Texture2D>("Tekstury/pixel");
 
             currentScreen = new Screens.GameScreen();
 

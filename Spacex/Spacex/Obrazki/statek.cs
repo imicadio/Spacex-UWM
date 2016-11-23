@@ -68,9 +68,13 @@ namespace Spacex.Obrazki
 
         }
 
+        public Rectangle Granica { get { return new Rectangle((int)this.Pozycja.X - 20, (int)this.Pozycja.Y - 20, 40, 40); } }
+
         public void Draw()
         {
             Stale.SPRITEBATCH.Draw(this.Tekstura[this.teksturaPozycja], this.Pozycja, null, Color.White, this.Rotation, new Vector2(20, 20), 1f, SpriteEffects.None, 0f);
+
+            Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Granica, new Color(1f, 0f, 0f, 0.3f));
         }
     }
 }
