@@ -16,12 +16,12 @@ namespace Spacex.Obrazki
         public kolumny()
         {
             this.tekstura = Stale.CONTENT.Load<Texture2D>("Tekstury/kolumny");
-            this.Pozycja = new Vector2(250, 0);
+            this.Pozycja = new Vector2(420, Stale.RANDOM.Next(-200, 5));
         }
 
         public void Update()
         {
-
+            this.Pozycja.X -= 2f;
         }
 
         public void Draw()

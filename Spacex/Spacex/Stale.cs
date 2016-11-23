@@ -20,6 +20,8 @@ namespace Spacex
         public static GraphicsDevice GRAPHICSDEVICE;
         public static Texture2D PIXEL;
 
+        public static Random RANDOM = new Random();
+
         public static Menedzer.InputManager INPUT;
     }
 }
