@@ -11,6 +11,7 @@ namespace Spacex.Screens
     {
         public Texture2D tlo;
         public Texture2D floor;
+        public Texture2D koniecgry;
         public Obrazki.statek statek;
         public Obrazki.scroll scroll;
         public List<Obrazki.kolumny> kolumny;
@@ -33,6 +34,7 @@ namespace Spacex.Screens
             tlo = Stale.CONTENT.Load<Texture2D>("Tekstury/tlo");
             floor = Stale.CONTENT.Load<Texture2D>("Tekstury/floor");
             font = Stale.CONTENT.Load<SpriteFont>("Font/Font");
+            koniecgry = Stale.CONTENT.Load<Texture2D>("Tekstury/koniecgry");
 
 
             Restart();
@@ -110,6 +112,12 @@ namespace Spacex.Screens
             statek.Draw();
 
             Stale.SPRITEBATCH.DrawString(this.font, "Wynik: " + this.wynik.ToString(), new Vector2(10, 10), Color.Yellow);
+
+            if (statek.zniszczony)
+            {
+                Stale.SPRITEBATCH.Draw(Stale.PIXEL, new Rectangle(0, 0, Stale.GRA_SZEROKOSC, Stale.GRA_WYSOKOSC), new Color(1f, 0f, 0f, 0.3f));
+                Stale.SPRITEBATCH.Draw(this.koniecgry, new Vector2(0, 80), Color.White);
+            }
 
 
             Stale.SPRITEBATCH.End();
