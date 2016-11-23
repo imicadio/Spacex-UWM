@@ -7,6 +7,11 @@ namespace Spacex.Screens
 {
     public abstract class Screen
     {
+        public virtual void LoadContent()
+        {
+
+        }
+
         public virtual void Update()
         {
 

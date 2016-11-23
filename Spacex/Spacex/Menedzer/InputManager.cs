@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Spacex.Menedzer
 {
-    class InputManager
+    public class InputManager
     {
         private KeyboardState _oldKS;
         private KeyboardState _KS;
