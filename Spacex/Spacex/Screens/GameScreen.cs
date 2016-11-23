@@ -10,7 +10,7 @@ namespace Spacex.Screens
     class GameScreen : Screen
     {
         public Texture2D tlo;
-
+        public Obrazki.statek statek;
         public GameScreen()
         {
 
@@ -19,11 +19,14 @@ namespace Spacex.Screens
         public override void LoadContent()
         {
             tlo = Stale.CONTENT.Load<Texture2D>("Tekstury/tlo");
+            statek = new Obrazki.statek();
+
             base.LoadContent();
         }
 
         public override void Update()
         {
+            statek.Update();
             base.Update();
         }
 
@@ -32,6 +35,8 @@ namespace Spacex.Screens
             Stale.SPRITEBATCH.Begin();
 
             Stale.SPRITEBATCH.Draw(this.tlo, Vector2.Zero, Color.White);
+
+            statek.Draw();
 
             Stale.SPRITEBATCH.End();
             base.Draw();
