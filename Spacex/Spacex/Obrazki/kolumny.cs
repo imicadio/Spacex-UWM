@@ -12,7 +12,6 @@ namespace Spacex.Obrazki
         public Texture2D tekstura;
         public Vector2 Pozycja;
 
-
         public kolumny()
         {
             this.tekstura = Stale.CONTENT.Load<Texture2D>("Tekstury/kolumny");
@@ -24,9 +23,16 @@ namespace Spacex.Obrazki
             this.Pozycja.X -= 2f;
         }
 
+        public Rectangle Gorna_Granica { get { return new Rectangle((int)this.Pozycja.X, (int)this.Pozycja.Y, 55, 308); } }
+        public Rectangle Dolna_Granica { get { return new Rectangle((int)this.Pozycja.X, (int)this.Pozycja.Y + 460, 55, 340); } }
+
         public void Draw()
         {
             Stale.SPRITEBATCH.Draw(this.tekstura, this.Pozycja, Color.White);
+
+            Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Gorna_Granica, new Color(1f, 0f, 0f, 0.3f));
+
+            Stale.SPRITEBATCH.Draw(Stale.PIXEL, this.Dolna_Granica, new Color(1f, 0f, 0f, 0.3f));
         }
     }
 }
