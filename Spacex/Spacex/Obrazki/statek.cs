@@ -18,6 +18,10 @@ namespace Spacex.Obrazki
         public int skok_czas = 500;
         public double skok_spadanie = 0;
 
+        public int animacja_czas = 100;
+        public double animacja_spadanie = 0;
+        public int dodanie_Tekstury = 1;
+
         public bool czy_skok = true;
 
 
@@ -42,15 +46,23 @@ namespace Spacex.Obrazki
                 skok_spadanie = 0;
             }
 
-            if (Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && czy_skok)
+            animacja_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
+            if (animacja_spadanie > animacja_czas)
             {
-                YSpadanie = -5;
+                this.teksturaPozycja += this.dodanie_Tekstury;
+                if (this.teksturaPozycja == 2 || this.teksturaPozycja == 0)
+                    this.dodanie_Tekstury = this.dodanie_Tekstury * -1;
+                animacja_spadanie = 0;
             }
 
+            if (Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && czy_skok)
+                YSpadanie = -5;
+            
+
             if (YSpadanie > 0f)
-                Rotation = 0.5f;
+                Rotation = 0.1f;
             else
-                Rotation = -0.5f;
+                Rotation = -0.1f;
 
             this.Pozycja.Y += YSpadanie;
 
