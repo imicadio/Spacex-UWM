@@ -15,6 +15,9 @@ namespace Spacex.Screens
         public Obrazki.scroll scroll;
         public List<Obrazki.kolumny> kolumny;
 
+        public SpriteFont font;
+        public int wynik = 0;
+
         public int kolumny_Czas = 2000;
         public double kolumny_Mijanie = 0;
 
@@ -27,6 +30,7 @@ namespace Spacex.Screens
         {
             tlo = Stale.CONTENT.Load<Texture2D>("Tekstury/tlo");
             floor = Stale.CONTENT.Load<Texture2D>("Tekstury/floor");
+            font = Stale.CONTENT.Load<SpriteFont>("Font/Font");
             statek = new Obrazki.statek();
             scroll = new Obrazki.scroll();
             kolumny = new List<Obrazki.kolumny>();
@@ -44,7 +48,14 @@ namespace Spacex.Screens
                 if (kolumny[i].Pozycja.X < -50)
                     kolumny.RemoveAt(i);
                 else
+                {
                     kolumny[i].Update();
+                    if (!kolumny[i].wynik && statek.Pozycja.X > kolumny[i].Pozycja.X + 50)
+                    {
+                        kolumny[i].wynik = true;
+                        wynik++;
+                    }
+                }
             }
 
             statek.Update();
@@ -76,6 +87,8 @@ namespace Spacex.Screens
             Stale.SPRITEBATCH.Draw(this.floor, new Vector2(0, 529), Color.White);
             scroll.Draw();
             statek.Draw();
+
+            Stale.SPRITEBATCH.DrawString(this.font, "Wynik: " + this.wynik.ToString(), new Vector2(10, 10), Color.Yellow);
 
 
             Stale.SPRITEBATCH.End();

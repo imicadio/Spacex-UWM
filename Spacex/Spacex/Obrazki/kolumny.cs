@@ -12,6 +12,8 @@ namespace Spacex.Obrazki
         public Texture2D tekstura;
         public Vector2 Pozycja;
 
+        public bool wynik = false;
+
         public kolumny()
         {
             this.tekstura = Stale.CONTENT.Load<Texture2D>("Tekstury/kolumny");
