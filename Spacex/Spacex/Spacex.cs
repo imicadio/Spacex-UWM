@@ -21,13 +21,19 @@ namespace Spacex
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            Stale.CONTENT = Content;
+            Stale.GRAPHICSDEVICE = GraphicsDevice;
+
+
             this.graphics.PreferredBackBufferHeight = Stale.GRA_WYSOKOSC;
             this.graphics.PreferredBackBufferWidth = Stale.GRA_SZEROKOSC;
             this.Window.Title = Stale.GRA_TYTUL;
 
             this.graphics.ApplyChanges();
 
+            Menedzer.InputManager input = new Menedzer.InputManager();
         }
+
         protected override void Initialize()
         {
             base.Initialize();
@@ -36,14 +42,14 @@ namespace Spacex
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-        }
-
-        protected override void UnloadContent()
-        {
+            Stale.SPRITEBATCH = spriteBatch;
         }
 
         protected override void Update(GameTime gameTime)
         {
+            Stale.GAMETIME = gameTime;
+            Stale.INPUT.Update();
+
             base.Update(gameTime);
         }
 
