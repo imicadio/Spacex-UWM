@@ -21,6 +21,8 @@ namespace Spacex.Screens
         public int kolumny_Czas = 2000;
         public double kolumny_Mijanie = 0;
 
+        public bool Koniec_Gry = false;
+
         public GameScreen()
         {
 
@@ -35,6 +37,8 @@ namespace Spacex.Screens
             scroll = new Obrazki.scroll();
             kolumny = new List<Obrazki.kolumny>();
             kolumny.Add(new Obrazki.kolumny());
+            wynik = 0;
+            Koniec_Gry = false;
 
 
             base.LoadContent();
@@ -43,17 +47,25 @@ namespace Spacex.Screens
         public override void Update()
         {
             kolumny_Tworzenie();
-            for (int i = kolumny.Count - 1; i > -1; i--)
+            if (!Koniec_Gry)
             {
-                if (kolumny[i].Pozycja.X < -50)
-                    kolumny.RemoveAt(i);
-                else
+                for (int i = kolumny.Count - 1; i > -1; i--)
                 {
-                    kolumny[i].Update();
-                    if (!kolumny[i].wynik && statek.Pozycja.X > kolumny[i].Pozycja.X + 50)
+                    if (kolumny[i].Pozycja.X < -50)
+                        kolumny.RemoveAt(i);
+                    else
                     {
-                        kolumny[i].wynik = true;
-                        wynik++;
+                        kolumny[i].Update();
+                        if (!kolumny[i].wynik && statek.Pozycja.X > kolumny[i].Pozycja.X + 50)
+                        {
+                            kolumny[i].wynik = true;
+                            wynik++;
+                        }
+
+                        if (statek.Granica.Intersects(kolumny[i].Gorna_Granica) || statek.Granica.Intersects(kolumny[i].Dolna_Granica))
+                        {
+                            Koniec_Gry = true;
+                        }
                     }
                 }
             }

@@ -24,7 +24,6 @@ namespace Spacex.Obrazki
 
         public bool czy_skok = true;
 
-
         public statek()
         {
             Tekstura = new Texture2D[3];
@@ -38,34 +37,39 @@ namespace Spacex.Obrazki
         public void Update()
         {
             YSpadanie += 0.2f;
-
-            skok_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
-            if (skok_spadanie > skok_czas)
+            if (this.Pozycja.Y < 500)
             {
-                czy_skok = true;
-                skok_spadanie = 0;
+                skok_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
+                if (skok_spadanie > skok_czas)
+                {
+                    czy_skok = true;
+                    skok_spadanie = 0;
+                }
+
+                animacja_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
+                if (animacja_spadanie > animacja_czas)
+                {
+                    this.teksturaPozycja += this.dodanie_Tekstury;
+                    if (this.teksturaPozycja == 2 || this.teksturaPozycja == 0)
+                        this.dodanie_Tekstury = this.dodanie_Tekstury * -1;
+                    animacja_spadanie = 0;
+                }
+
+                if (Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && czy_skok)
+                {
+                    YSpadanie = -5;
+                }
+
+
+
+                if (YSpadanie > 0f)
+                    Rotation = 0.1f;
+                else
+                    Rotation = -0.1f;
+
+
+                this.Pozycja.Y += YSpadanie;
             }
-
-            animacja_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
-            if (animacja_spadanie > animacja_czas)
-            {
-                this.teksturaPozycja += this.dodanie_Tekstury;
-                if (this.teksturaPozycja == 2 || this.teksturaPozycja == 0)
-                    this.dodanie_Tekstury = this.dodanie_Tekstury * -1;
-                animacja_spadanie = 0;
-            }
-
-            if (Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && czy_skok)
-                YSpadanie = -5;
-            
-
-            if (YSpadanie > 0f)
-                Rotation = 0.1f;
-            else
-                Rotation = -0.1f;
-
-            this.Pozycja.Y += YSpadanie;
-
         }
 
         public Rectangle Granica { get { return new Rectangle((int)this.Pozycja.X - 20, (int)this.Pozycja.Y - 20, 40, 40); } }
