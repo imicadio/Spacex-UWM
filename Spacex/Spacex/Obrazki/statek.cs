@@ -15,6 +15,12 @@ namespace Spacex.Obrazki
         public float Rotation;
         public float YSpadanie;
 
+        public int skok_czas = 500;
+        public double skok_spadanie = 0;
+
+        public bool czy_skok = true;
+
+
         public statek()
         {
             Tekstura = new Texture2D[3];
@@ -28,6 +34,18 @@ namespace Spacex.Obrazki
         public void Update()
         {
             YSpadanie += 0.2f;
+
+            skok_spadanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
+            if (skok_spadanie > skok_czas)
+            {
+                czy_skok = true;
+                skok_spadanie = 0;
+            }
+
+            if (Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && czy_skok)
+            {
+                YSpadanie = -5;
+            }
 
             if (YSpadanie > 0f)
                 Rotation = 0.5f;
