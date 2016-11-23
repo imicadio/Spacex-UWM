@@ -13,6 +13,7 @@ namespace Spacex.Obrazki
         public int teksturaPozycja;
         public Vector2 Pozycja;
         public float Rotation;
+        public float YSpadanie;
 
         public statek()
         {
@@ -26,6 +27,14 @@ namespace Spacex.Obrazki
 
         public void Update()
         {
+            YSpadanie += 0.2f;
+
+            if (YSpadanie > 0f)
+                Rotation = 0.5f;
+            else
+                Rotation = -0.5f;
+
+            this.Pozycja.Y += YSpadanie;
 
         }
 
