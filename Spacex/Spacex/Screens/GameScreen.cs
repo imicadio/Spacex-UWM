@@ -68,7 +68,7 @@ namespace Spacex.Screens
                             wynik++;
                         }
 
-                        if (statek.Granica.Intersects(kolumny[i].Gorna_Granica) || statek.Granica.Intersects(kolumny[i].Dolna_Granica))
+                        if (statek.Granica.Intersects(kolumny[i].Gorna_Granica) || statek.Granica.Intersects(kolumny[i].Dolna_Granica) || statek.Granica.Intersects(scroll.Granica_GORA))
                         {
                             statek.zniszczony = true;
                         }
