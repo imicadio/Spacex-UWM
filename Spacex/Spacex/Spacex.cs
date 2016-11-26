@@ -23,17 +23,17 @@ namespace Spacex
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            Stale.CONTENT = Content;
-            Stale.GRAPHICSDEVICE = GraphicsDevice;
+            Const.CONTENT = Content;
+            Const.GRAPHICSDEVICE = GraphicsDevice;
 
 
-            this.graphics.PreferredBackBufferHeight = Stale.GRA_WYSOKOSC;
-            this.graphics.PreferredBackBufferWidth = Stale.GRA_SZEROKOSC;
-            this.Window.Title = Stale.GRA_TYTUL;
+            this.graphics.PreferredBackBufferHeight = Const.GAME_HEIGHT;
+            this.graphics.PreferredBackBufferWidth = Const.GAME_WIDTH;
+            this.Window.Title = Const.TITLE;
 
             this.graphics.ApplyChanges();
 
-            Menedzer.InputManager input = new Menedzer.InputManager();
+            Manager.InputManager input = new Manager.InputManager();
         }
 
         protected override void Initialize()
@@ -44,8 +44,8 @@ namespace Spacex
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Stale.SPRITEBATCH = spriteBatch;
-            Stale.PIXEL = Content.Load<Texture2D>("Tekstury/pixel");
+            Const.SPRITEBATCH = spriteBatch;
+            Const.PIXEL = Content.Load<Texture2D>("Texture/pixel");
 
             currentScreen = new Screens.GameScreen();
 
@@ -54,8 +54,8 @@ namespace Spacex
 
         protected override void Update(GameTime gameTime)
         {
-            Stale.GAMETIME = gameTime;
-            Stale.INPUT.Update();
+            Const.GAMETIME = gameTime;
+            Const.INPUT.Update();
 
             currentScreen.Update();
 

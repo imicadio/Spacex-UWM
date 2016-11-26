@@ -72,16 +72,16 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menedzer\InputManager.cs" />
-    <Compile Include="Obrazki\kolumny.cs" />
-    <Compile Include="Obrazki\scroll.cs" />
-    <Compile Include="Obrazki\statek.cs" />
+    <Compile Include="Manager\InputManager.cs" />
+    <Compile Include="Pictures\column.cs" />
+    <Compile Include="Pictures\scroll.cs" />
+    <Compile Include="Pictures\spacecraft.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\Screen.cs" />
     <Compile Include="Spacex.cs" />
-    <Compile Include="Stale.cs" />
+    <Compile Include="Const.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

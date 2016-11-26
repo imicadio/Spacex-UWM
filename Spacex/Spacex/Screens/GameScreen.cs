@@ -9,20 +9,22 @@ namespace Spacex.Screens
 {
     class GameScreen : Screen
     {
-        public Texture2D tlo;
+        // GameScreen cały kod gry jest praktycznie umieszczony w tym pliku, "cała logika"
+
+        public Texture2D background;
         public Texture2D floor;
-        public Texture2D koniecgry;
-        public Obrazki.statek statek;
-        public Obrazki.scroll scroll;
-        public List<Obrazki.kolumny> kolumny;
+        public Texture2D GameOver;
+        public Pictures.spacecraft spacecraft;
+        public Pictures.scroll scroll;
+        public List<Pictures.column> column;
 
         public SpriteFont font;
         public int wynik = 0;
 
-        public int kolumny_Czas = 2000;
-        public double kolumny_Mijanie = 0;
+        public int column_time = 2000;
+        public double column_passage = 0;
 
-        public bool Koniec_Gry = false;
+        public bool Game_Over = false;
 
         public GameScreen()
         {
@@ -31,54 +33,56 @@ namespace Spacex.Screens
 
         public override void LoadContent()
         {
-            tlo = Stale.CONTENT.Load<Texture2D>("Tekstury/tlo");
-            floor = Stale.CONTENT.Load<Texture2D>("Tekstury/floor");
-            font = Stale.CONTENT.Load<SpriteFont>("Font/Font");
-            koniecgry = Stale.CONTENT.Load<Texture2D>("Tekstury/koniecgry");
+            //Wczytanie textur
+
+            background = Const.CONTENT.Load<Texture2D>("Texture/background");
+            floor = Const.CONTENT.Load<Texture2D>("Texture/floor");
+            font = Const.CONTENT.Load<SpriteFont>("Font/Font");
+            GameOver = Const.CONTENT.Load<Texture2D>("Texture/GameOver");  
 
 
-            Restart();
+            Restart(); 
             base.LoadContent();
         }
 
-        public void Restart()
+        public void Restart() // Restart, nowe wczytanie
         {
-            statek = new Obrazki.statek();
-            scroll = new Obrazki.scroll();
-            kolumny = new List<Obrazki.kolumny>();
-            kolumny.Add(new Obrazki.kolumny());
+            spacecraft = new Pictures.spacecraft();
+            scroll = new Pictures.scroll();
+            column = new List<Pictures.column>();
+            column.Add(new Pictures.column());
             wynik = 0;
         }
 
         public override void Update()
         {
-            kolumny_Tworzenie();
-            if (!statek.zniszczony)
+            Create_Column(); // poniżej został umieszczony kod który odpowiada za wynik, zniszczenie statku, pozycje kolumn
+            if (!spacecraft.destroyed)
             {
-                for (int i = kolumny.Count - 1; i > -1; i--)
+                for (int i = column.Count - 1; i > -1; i--) // kolumny 
                 {
-                    if (kolumny[i].Pozycja.X < -50)
-                        kolumny.RemoveAt(i);
+                    if (column[i].Position.X < -50)
+                        column.RemoveAt(i);
                     else
                     {
-                        kolumny[i].Update();
-                        if (!kolumny[i].wynik && statek.Pozycja.X > kolumny[i].Pozycja.X + 50)
+                        column[i].Update();
+                        if (!column[i].wynik && spacecraft.Position.X > column[i].Position.X + 50) // statek przeszedł to i wynik się zwiększa przez przejście przez kolumnę
                         {
-                            kolumny[i].wynik = true;
+                            column[i].wynik = true;
                             wynik++;
                         }
 
-                        if (statek.Granica.Intersects(kolumny[i].Gorna_Granica) || statek.Granica.Intersects(kolumny[i].Dolna_Granica) || statek.Granica.Intersects(scroll.Granica_GORA))
+                        if (spacecraft.Limit.Intersects(column[i].Upper_Limit) || spacecraft.Limit.Intersects(column[i].Lower_Limit) || spacecraft.Limit.Intersects(scroll.Upper_Limit))
                         {
-                            statek.zniszczony = true;
+                            spacecraft.destroyed = true; // statek zniszczoy bo dotknął kolumny albo dolnej i górnej granicy
                         }
                     }
                 }
-                statek.Update();
+                spacecraft.Update();
                 scroll.Update();
             }
 
-            if (statek.zniszczony && Stale.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.R))
+            if (spacecraft.destroyed && Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.R)) // wciśnięcie R powoduje restart gry
             {
                 this.Restart();
             }
@@ -86,41 +90,41 @@ namespace Spacex.Screens
             base.Update();
         }
 
-        public void kolumny_Tworzenie()
+        public void Create_Column() // tworzy kolumny
         {
-            kolumny_Mijanie += Stale.GAMETIME.ElapsedGameTime.TotalMilliseconds;
-            if (kolumny_Mijanie > kolumny_Czas)
+            column_passage += Const.GAMETIME.ElapsedGameTime.TotalMilliseconds;
+            if (column_passage > column_time)
             {
-                kolumny.Add(new Obrazki.kolumny());
-                kolumny_Mijanie = 0;
+                column.Add(new Pictures.column());
+                column_passage = 0;
             }
         }
 
-        public override void Draw()
+        public override void Draw() // w metodzie Draw() umieszczone są tła, statki, wynik czy scroll
         {
-            Stale.SPRITEBATCH.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null);
+            Const.SPRITEBATCH.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null); // scroll pasek, żeby się cały czas przewijał
 
-            Stale.SPRITEBATCH.Draw(this.tlo, Vector2.Zero, Color.White);
+            Const.SPRITEBATCH.Draw(this.background, Vector2.Zero, Color.White); // tło
 
-            foreach (var item in kolumny)
+            foreach (var item in column) // kolumny
             {
                 item.Draw();
             }
 
-            Stale.SPRITEBATCH.Draw(this.floor, new Vector2(0, 529), Color.White);
+            Const.SPRITEBATCH.Draw(this.floor, new Vector2(0, 529), Color.White);
             scroll.Draw();
-            statek.Draw();
+            spacecraft.Draw();
 
-            Stale.SPRITEBATCH.DrawString(this.font, "Wynik: " + this.wynik.ToString(), new Vector2(10, 10), Color.Yellow);
+            Const.SPRITEBATCH.DrawString(this.font, "Wynik: " + this.wynik.ToString(), new Vector2(10, 10), Color.Yellow);
 
-            if (statek.zniszczony)
+            if (spacecraft.destroyed) // w tym kodzie pokaże się nam czerwone tło i GAME OVER jeśli statek zniszczony
             {
-                Stale.SPRITEBATCH.Draw(Stale.PIXEL, new Rectangle(0, 0, Stale.GRA_SZEROKOSC, Stale.GRA_WYSOKOSC), new Color(1f, 0f, 0f, 0.3f));
-                Stale.SPRITEBATCH.Draw(this.koniecgry, new Vector2(0, 80), Color.White);
+                Const.SPRITEBATCH.Draw(Const.PIXEL, new Rectangle(0, 0, Const.GAME_WIDTH, Const.GAME_HEIGHT), new Color(1f, 0f, 0f, 0.3f));
+                Const.SPRITEBATCH.Draw(this.GameOver, new Vector2(0, 80), Color.White);
             }
 
 
-            Stale.SPRITEBATCH.End();
+            Const.SPRITEBATCH.End();
             base.Draw();
         }
     }

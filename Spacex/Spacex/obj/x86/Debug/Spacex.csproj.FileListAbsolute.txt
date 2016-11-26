@@ -1,0 +1,16 @@
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Debug\Spacex.csprojResolveAssemblyReference.cache
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\floor.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\pixel.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\scroll.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Font\Font.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Spacex.exe
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Spacex.pdb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Debug\Spacex.exe
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Debug\Spacex.pdb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\background.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\column.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\GameOver.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft1.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft2.xnb
