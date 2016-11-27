@@ -8,3 +8,4 @@ Content\Texture\GameOver.xnb
 Content\Texture\spacecraft.xnb
 Content\Texture\spacecraft1.xnb
 Content\Texture\spacecraft2.xnb
+Content\Font\WynikBIG.xnb

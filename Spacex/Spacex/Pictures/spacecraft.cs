@@ -38,8 +38,10 @@ namespace Spacex.Pictures
 
         public void Update()
         {
+            // szybkość spadania
             Yfall += 0.2f; 
 
+            // dzięki temu skacze w górę i opada
             jump_fall += Const.GAMETIME.ElapsedGameTime.TotalMilliseconds;
             if (jump_fall > jump_time)
             {
@@ -47,6 +49,7 @@ namespace Spacex.Pictures
                 jump_fall = 0;
             }
 
+            // ten fragment powoduje dłuższy skok za pomocą spacji
             animation_fall += Const.GAMETIME.ElapsedGameTime.TotalMilliseconds;
             if (animation_fall > animation_time)
             {
@@ -56,7 +59,8 @@ namespace Spacex.Pictures
                 animation_fall = 0;
             }
 
-            if (Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && jump) // spacja powoduje skok
+            // spacja powoduje skok
+            if (Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) && jump) 
             {
                 Yfall = -5;
             }
@@ -68,7 +72,7 @@ namespace Spacex.Pictures
             else
                 Rotation = -0.1f;
 
-
+            // dzęki temu statek spada
             this.Position.Y += Yfall;
 
             // jesli statek dotknie podlogi to zniszczony bedzie

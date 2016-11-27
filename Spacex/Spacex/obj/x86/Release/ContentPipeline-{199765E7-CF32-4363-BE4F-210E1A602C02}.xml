@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\floor.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\floor.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\pixel.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\pixel.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -25,16 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\scroll.xnb</Output>
-      <Time>2016-11-24T08:02:50+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Font\Font.spritefont</Source>
-      <Name>Font\Font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Font\Font.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\scroll.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -43,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\background.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\background.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -52,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\column.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\column.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -61,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\GameOver.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\GameOver.xnb</Output>
       <Time>2016-11-27T21:32:47.7962915+01:00</Time>
     </Item>
     <Item>
@@ -70,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -79,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft1.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft1.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -88,7 +79,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft2.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft2.xnb</Output>
+      <Time>2016-11-24T08:02:50+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Font\Font.spritefont</Source>
+      <Name>Font\Font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Font\Font.xnb</Output>
       <Time>2016-11-24T08:02:50+01:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Font\WynikBIG.xnb</Output>
+      <Output>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Font\WynikBIG.xnb</Output>
       <Time>2016-11-27T22:21:48.8052341+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -105,12 +105,12 @@
       <ContentProjectGUID>{199765E7-CF32-4363-BE4F-210E1A602C02}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
-      <BuildConfiguration>Debug</BuildConfiguration>
-      <CompressContent>false</CompressContent>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
       <RootDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\SpacexContent\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\</OutputDirectory>
+      <IntermediateDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

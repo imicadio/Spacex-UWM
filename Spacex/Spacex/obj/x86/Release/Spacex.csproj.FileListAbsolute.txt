@@ -1,0 +1,16 @@
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\floor.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\pixel.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\scroll.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\background.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\column.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\GameOver.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft1.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Texture\spacecraft2.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Font\Font.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Content\Font\WynikBIG.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Spacex.exe
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Release\Spacex.pdb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Release\Spacex.exe
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\obj\x86\Release\Spacex.pdb

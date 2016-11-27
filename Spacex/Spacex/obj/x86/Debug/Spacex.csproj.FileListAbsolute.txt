@@ -14,3 +14,4 @@ C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86
 C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft.xnb
 C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft1.xnb
 C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Texture\spacecraft2.xnb
+C:\Users\Jesio\Desktop\Spacex-UWM-master\Spacex-UWM-master\Spacex\Spacex\bin\x86\Debug\Content\Font\WynikBIG.xnb

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,17 @@ namespace Spacex.Screens
         public Pictures.scroll scroll;
         public List<Pictures.column> column;
 
+        public SpriteFont fontBIG;
         public SpriteFont font;
         public int wynik = 0;
+        public int wynikEND = 0;
 
         public int column_time = 2000;
         public double column_passage = 0;
 
         public bool Game_Over = false;
+
+        public Spacex spacex;
 
         public GameScreen()
         {
@@ -38,6 +43,7 @@ namespace Spacex.Screens
             background = Const.CONTENT.Load<Texture2D>("Texture/background");
             floor = Const.CONTENT.Load<Texture2D>("Texture/floor");
             font = Const.CONTENT.Load<SpriteFont>("Font/Font");
+            fontBIG = Const.CONTENT.Load<SpriteFont>("Font/WynikBIG");
             GameOver = Const.CONTENT.Load<Texture2D>("Texture/GameOver");  
 
 
@@ -56,7 +62,8 @@ namespace Spacex.Screens
 
         public override void Update()
         {
-            Create_Column(); // poniżej został umieszczony kod który odpowiada za wynik, zniszczenie statku, pozycje kolumn
+            // poniżej został umieszczony kod który odpowiada za wynik, zniszczenie statku, pozycje kolumn
+            Create_Column(); 
             if (!spacecraft.destroyed)
             {
                 for (int i = column.Count - 1; i > -1; i--) // kolumny 
@@ -66,15 +73,18 @@ namespace Spacex.Screens
                     else
                     {
                         column[i].Update();
-                        if (!column[i].wynik && spacecraft.Position.X > column[i].Position.X + 50) // statek przeszedł to i wynik się zwiększa przez przejście przez kolumnę
+
+                        if (!column[i].wynik && spacecraft.Position.X > column[i].Position.X + 50)
                         {
                             column[i].wynik = true;
                             wynik++;
+                            // statek przeszedł to i wynik się zwiększa przez przejście przez kolumnę
                         }
 
                         if (spacecraft.Limit.Intersects(column[i].Upper_Limit) || spacecraft.Limit.Intersects(column[i].Lower_Limit) || spacecraft.Limit.Intersects(scroll.Upper_Limit))
                         {
-                            spacecraft.destroyed = true; // statek zniszczoy bo dotknął kolumny albo dolnej i górnej granicy
+                            // statek zniszczony bo dotknął kolumny albo dolnej i górnej granicy
+                            spacecraft.destroyed = true; 
                         }
                     }
                 }
@@ -82,13 +92,18 @@ namespace Spacex.Screens
                 scroll.Update();
             }
 
-            if (spacecraft.destroyed && Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.R)) // wciśnięcie R powoduje restart gry
-            {
+            // wciśnięcie R powoduje restart gry
+            if (spacecraft.destroyed && Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.R))            
                 this.Restart();
-            }
+
+            // wciśnięcie ESC powoduje zakończenie gry
+            else if (spacecraft.destroyed && Const.INPUT.isKeyPressed(Microsoft.Xna.Framework.Input.Keys.Escape))            
+                spacex.Quit();
+            
 
             base.Update();
         }
+        
 
         public void Create_Column() // tworzy kolumny
         {
@@ -115,12 +130,17 @@ namespace Spacex.Screens
             scroll.Draw();
             spacecraft.Draw();
 
+            // napis na górze "wynik"
             Const.SPRITEBATCH.DrawString(this.font, "Wynik: " + this.wynik.ToString(), new Vector2(10, 10), Color.Yellow);
 
-            if (spacecraft.destroyed) // w tym kodzie pokaże się nam czerwone tło i GAME OVER jeśli statek zniszczony
+            wynikEND = wynik;
+
+            // w tym kodzie pokaże się nam czerwone tło i GAME OVER jeśli statek zniszczony
+            if (spacecraft.destroyed) 
             {
                 Const.SPRITEBATCH.Draw(Const.PIXEL, new Rectangle(0, 0, Const.GAME_WIDTH, Const.GAME_HEIGHT), new Color(1f, 0f, 0f, 0.3f));
                 Const.SPRITEBATCH.Draw(this.GameOver, new Vector2(0, 80), Color.White);
+                Const.SPRITEBATCH.DrawString(this.fontBIG, "Wynik: " + this.wynikEND.ToString(), new Vector2(99, 65), Color.LawnGreen);
             }
 
 
